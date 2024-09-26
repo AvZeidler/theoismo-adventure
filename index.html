@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="src/background/icon.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
@@ -16,8 +15,23 @@
 </head>
 
 <body>
+    <div id="popup" class="popup">
+        <div class="popup-conteudo">
+            <span id="btnClose" class="btn-close">&times;</span>
+            <h1>Theo</h1>
+            <p>Tem certeza que voce deseja continuar?</p>
+            <p>Não me responsabilizo...</p>
+            <div class="popup-botoes">
+                <button id="btnAceito" class="btn-aceito">Aceito</button>
+                <button id="btnFechar" class="btn-fechar">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="countdown" id="countdown"></div>
 
     <div class="container">
+
         <h1>Theoismo</h1>
 
         <p>Querido Theo,</p>
@@ -80,26 +94,9 @@
         </div>
 
         <div class="youtube-player">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZFspOYo8wWQ?si=ZLErpLvVo9URPgyU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>    
-
-        <div id="popup1" class="popup">
-            <div class="popup-content">
-                <span class="close-button">&times;</span>
-                <h2>Voce tem certeza mesmo?</h2>
-                <p>Não sei, vamos tentar mais uma vez!</p>
-                <button class="proximo" onclick="closePopup('popup1'); openPopup('popup2')">Vamos!</button>
-            </div>
-        </div>
-
-        <div id="popup2" class="popup">
-            <div class="popup-content">
-                <span class="close-button">&times;</span>
-                <h2>Theo...</h2>
-                <p>Você tem certeza?</p>
-                <button class="proximo" onclick="closePopup('popup2')">Certeza!</button>
-                <button class="fechar" onclick="closeWindow()">Não tenho.</button>
-            </div>
+            <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/ZFspOYo8wWQ?si=ZLErpLvVo9URPgyU" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <script src="src/js/script.js"></script>

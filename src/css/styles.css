@@ -15,6 +15,28 @@ body.no-scroll {
     overflow: hidden;
 }
 
+.countdown {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    background-color: #3e0404cc;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+
+}
+
+.countdown:hover {
+    background-color: white;
+    color: #3e0404cc;
+    font-weight: bold;
+
+}
+
 .container {
     margin: 20px;
     padding: 20px;
@@ -71,17 +93,24 @@ p:hover {
     display: flex;
 }
 
-.popup-content {
+.popup-conteudo {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    text-align: justify;
     width: 300px;
     box-shadow: 0 2px 10px #000000;
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
+    position: relative;
+}
+
+.popup-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 button {
@@ -106,45 +135,45 @@ button:active {
     box-shadow: 0 2px 4px #000000;
 }
 
-button.fechar {
-    background-color: #9b1107;
+.btn-fechar {
+    background-color: #601611;
     color: white;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button.fechar:hover {
+.btn-fechar:hover {
     background-color: white;
-    color: #9b1107;
+    color: #601611;
     font-weight: bold;
 }
 
-
-button.proximo {
-    background-color: #04546e;
+.btn-aceito {
+    background-color: #084020;
     color: white;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button.proximo:hover {
+.btn-aceito:hover {
     background-color: white;
-    color: #04546e;
+    color: #084020;
     font-weight: bold;
 }
 
-.close-button {
-    color: #aaa;
-    float: right;
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 28px;
     font-weight: bold;
+    color: #aaa;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.close-button:hover {
+.btn-close:hover {
     color: #a00a0a;
     transform: scale(1.5);
 }
-
 
 .youtube-player {
     display: flex;
@@ -158,7 +187,7 @@ button.proximo:hover {
 }
 
 .youtube-player iframe {
-    width: 100%; 
-    max-width: 560px; 
+    width: 100%;
+    max-width: 560px;
     height: auto;
 }
