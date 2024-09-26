@@ -144,3 +144,21 @@ button.proximo:hover {
     color: #a00a0a;
     transform: scale(1.5);
 }
+
+
+.youtube-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.youtube-player h2 {
+    margin-bottom: 10px;
+}
+
+.youtube-player iframe {
+    width: 100%; 
+    max-width: 560px; 
+    height: auto;
+}
