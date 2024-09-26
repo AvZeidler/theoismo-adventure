@@ -1,6 +1,6 @@
 window.onload = function () {
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date('2024-09-12T00:00:00');
+    const targetDate = new Date('2024-10-12T00:00:00');
     const popup = document.getElementById('popup');
     const btnAceito = document.getElementById('btnAceito');
     const btnFechar = document.getElementById('btnFechar');
