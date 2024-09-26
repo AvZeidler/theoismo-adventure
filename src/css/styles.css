@@ -1,0 +1,146 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('../background/theoismo.png');
+    background-size: contain;
+    background-position: center;
+    backdrop-filter: blur(2px);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #773737;
+    border-radius: 10px;
+    max-width: 600px;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #4e0606;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4e0606;
+    font-weight: bold;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+p:hover {
+    text-shadow: 0 2px 5px #8853534d;
+    transition: text-shadow 0.3s;
+    transform: scale(1.01);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4e0606;
+    font-weight: 500;
+    text-align: justify;
+    border-top: 1px solid #4e0606;
+    padding-top: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    text-align: justify;
+    width: 300px;
+    box-shadow: 0 2px 10px #000000;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px #000000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px #000000;
+}
+
+button.fechar {
+    background-color: #9b1107;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.fechar:hover {
+    background-color: white;
+    color: #9b1107;
+    font-weight: bold;
+}
+
+
+button.proximo {
+    background-color: #04546e;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.proximo:hover {
+    background-color: white;
+    color: #04546e;
+    font-weight: bold;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+    color: #a00a0a;
+    transform: scale(1.5);
+}
