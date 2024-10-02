@@ -1,6 +1,23 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const carta = document.getElementById('carta');
+    const pagina = document.getElementById('pagina');
+    const voltar = document.getElementById('voltar');
+
+
+    carta.addEventListener('click', () => {
+        carta.style.display = 'none'; // Esconde a carta
+        pagina.style.display = 'block'; // Mostra a nova página
+    });
+
+    voltar.addEventListener('click', () => {
+        pagina.style.display = 'none'; // Esconde a nova página
+        carta.style.display = 'flex'; // Mostra a carta novamente
+    });
+});
+
 window.onload = function () {
     const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date('2024-10-12T00:00:00');
+    const targetDate = new Date('2027-03-25T00:00:00');
     const popup = document.getElementById('popup');
     const btnAceito = document.getElementById('btnAceito');
     const btnFechar = document.getElementById('btnFechar');
@@ -24,17 +41,45 @@ window.onload = function () {
     }
 
     const countdownInterval = setInterval(updateCountdown, 1000);
+};
 
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById('audio');
+    const playPauseButton = document.getElementById('playPause');
+    const seekBar = document.getElementById('seekBar');
+    const volumeButton = document.getElementById('volumeButton');
+    const volumeBar = document.getElementById('volumeBar');
 
-    btnAceito.addEventListener('click', () => {
-        popup.style.display = 'none';
+    // Toggle play/pause
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.innerHTML = "⏸️"; // Pausa
+        } else {
+            audio.pause();
+            playPauseButton.innerHTML = "▶️"; // Play
+        }
     });
 
-    btnFechar.addEventListener('click', () => {
-        window.close();
+    // Update the seek bar as the audio plays
+    audio.addEventListener('timeupdate', () => {
+        const value = (audio.currentTime / audio.duration) * 100;
+        seekBar.value = value;
     });
 
-    btnClose.addEventListener('click', () => {
-        popup.style.display = 'none';
+    // Seek audio when the seek bar is changed
+    seekBar.addEventListener('input', () => {
+        const seekTime = (seekBar.value / 100) * audio.duration;
+        audio.currentTime = seekTime;
     });
-}
+
+    // Volume control
+    volumeButton.addEventListener('click', () => {
+        audio.muted = !audio.muted; // Alterna mudo
+        volumeButton.innerHTML = audio.muted ? "🔇" : "🔊"; // Muda ícone
+    });
+
+    volumeBar.addEventListener('input', () => {
+        audio.volume = volumeBar.value / 100; // Ajusta volume
+    });
+});

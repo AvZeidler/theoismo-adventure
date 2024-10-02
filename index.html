@@ -11,96 +11,37 @@
         rel="stylesheet">
     <title>Theoismo</title>
     <link rel="stylesheet" href="src/css/styles.css">
-
 </head>
 
 <body>
-    <div id="popup" class="popup">
-        <div class="popup-conteudo">
-            <span id="btnClose" class="btn-close">&times;</span>
-            <h1>Theo</h1>
-            <p>Tem certeza que voce deseja continuar?</p>
-            <p>Não me responsabilizo...</p>
-            <div class="popup-botoes">
-                <button id="btnAceito" class="btn-aceito">Aceito</button>
-                <button id="btnFechar" class="btn-fechar">Fechar</button>
-            </div>
+    <div class="countdown" id="countdown"></div>
+
+    <div class="carta" id="carta">
+        <h2>Nova Carta!</h2>
+        <p>De: Alice</p>
+        <p>Para: Theo</p>
+    </div>
+
+    <div class="pagina" id="pagina" style="display: none;"> <!-- Começa escondida -->
+        <h1>Bem-vindo à Nova Página!</h1>
+        <p>Essa é a página revelada ao clicar na carta.</p>
+        <button id="voltar">Voltar</button>
+    </div>
+
+    <div class="audio-player">
+        <audio id="audio" autoplay>
+            <source src="src/background/music/music.mp3" type="audio/mpeg"> 
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <div class="controls">
+            <button id="playPause">▶️</button>
+            <input type="range" id="seekBar" value="0" step="1" min="0">
+            <button id="volumeButton">🔊</button>
+            <input type="range" id="volumeBar" value="100" step="1" min="0" max="100">
         </div>
     </div>
 
-    <div class="countdown" id="countdown"></div>
-
-    <div class="container">
-
-        <h1>Theoismo</h1>
-
-        <p>Querido Theo,</p>
-
-        <p>Nossa, que dor vai ser escrever isso... Sabe, já me disseram que eu sou muito boa em términos, despedidas e
-            adeus. Realmente, eu concordo com essa afirmação, odeio deixar portas entreabertas permitindo que o passado
-            volte para me assombrar com decisões já tomadas. Não se resume apenas a casos amorosos, mas a amigos,
-            familiares e, obviamente, amores. Mas me deixe confessar, é a primeira vez que sinto o verdadeiro peso de
-            uma partida, de um coração quebrado por uma separação e o absurdo de racionalizar sentimentos que eu mal
-            consigo explicar, mas é tudo o que me resta.</p>
-
-        <p>Hoje foi o dia em que percebi que não tem mais volta, não tem como trapacear com o destino e que viver sob o
-            peso do arrependimento irá nos consumir. Já digo que odeio clichês e a vida parece ser feita deles, como um
-            algoritmo simples, que só sabe se repetir e entrar em loops. Não quero dizer, mas foi um momento errado,
-            pessoa certa. Desgosto de como isso parece uma desculpa esfarrapada. Eu realmente AMARIA ficar com você,
-            porém me odiaria em ser egoísta com alguém que eu amo tanto. Talvez fosse mais confortável, mas ao imaginar
-            o arrependimento ou a frustração de algo não ter sido realizado em seus olhos numa terça-feira à noite, me
-            assusta mais do que a brusca ruptura de uma partida.</p>
-
-        <p>Amar alguém deve ser por inteiro. Não vejo defeitos em você, não porque eles não existam — todos têm defeitos
-            —, mas pelo fato de que isso torna você "THEO", um conceito abstrato que eu inventei na minha cabeça para
-            superar o tédio em viver sozinha. "Theoísmo" é um nome muito engraçado. Eu rio todas as vezes em como soa
-            tão francês, parece algo que minha cabeça iria criar, juro, sério. Quatro letras em todos os nomes e apenas
-            um "de" para juntar o sobrenome. Nunca irei superar o seu nome.</p>
-
-        <p>A sua personalidade é simplesmente inexplicável. Como alguém gosta de black metal e Froid? Ou, em meio ao
-            tédio de uma aula de psicologia, simplesmente começar a codar em CSS? Eu tenho várias dessas contradições
-            existentes na sua personalidade. Simplesmente me sinto fascinada pela sua essência, seu corpo e suas
-            expressões. Eu acho que o sonho de toda mulher é ver um homem com costas largas, que invade lugares com
-            cuidado para não infringir leis, cozinhando na sua cozinha, falando sobre como a mostarda sobressai o gosto
-            dos outros elementos e que um pouco de mel resolveria. Eu só queria ter tido mais tempo para testemunhar
-            todas essas camadas. Eu só queria mais tempo.</p>
-
-        <p>Você faz com que eu me sinta segura. Está tudo bem se eu escorregar de uma pedra molhada pela chuva do dia
-            anterior em uma trilha longe da civilização, porque o Theo provavelmente vai me segurar e ainda sorrir.
-            Todos os nossos momentos, dias, foram como se a linha do tempo quebrasse e ali morasse a eternidade, mas
-            logo se entrelaçasse com a brevidade de uma tarde. Foram poucos os momentos em que me perguntei se você iria
-            me julgar. Amo quando você complementa qualquer loucura que eu fale aceitando qualquer ideia que eu ofereça
-            sem nenhuma hesitação. E o que mais me dói é a facilidade com que você me ama. Eu sinto que não te requer
-            nenhum esforço me amar, e me alegra saber que isso é tão recíproco quanto.</p>
-
-        <p>Preciso confessar que isso tudo é demais pra mim. Quando você notou e me perguntou, me lembro de chorar em
-            silêncio, como se meu coração tivesse sido rasgado, não por você, mas por mim mesma. Eu ainda não entendo
-            como algo tão bom pode doer de forma tão triste. Não sei se eu preciso entender, sinceramente. Peço
-            desculpas por não ter te dito a verdade... Eu só queria mais tempo. Eu precisava de mais tempo com você.
-            Estar perto de você, ouvir sobre o seu dia... Era quase uma necessidade física.</p>
-
-        <p>Obrigada por me deixar apreciar a sua existência brevemente. Por me deixar sentir o cheiro da sua pele,
-            abraçar você enquanto chorava, pentear seus cabelos, e, sobretudo, por me fazer rir e dizer que me amava
-            depois. Você fez a vida valer a pena, mesmo que por um instante. Agora, eu sei que o amor existe. Agora, eu
-            entendo o que significa amar alguém de verdade e, principalmente, ser amada. E isso, por mais doloroso que
-            seja, é o que me destrói e, ao mesmo tempo, me sustenta.</p>
-
-        <p>Mas eu ainda só queria mais tempo...</p>
-
-        <p>Com carinho,<br>Alice ❤️</p>
-
-        <div class="footer">
-            <p>26/09/2024</p>
-        </div>
-
-        <div class="youtube-player">
-            <iframe width="560" height="315"
-                src="https://www.youtube-nocookie.com/embed/ZFspOYo8wWQ?si=ZLErpLvVo9URPgyU" frameborder="0"
-                allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-
-        <script src="src/js/script.js"></script>
-
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>
