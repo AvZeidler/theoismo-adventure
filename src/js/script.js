@@ -1,27 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const carta = document.getElementById('carta');
-    const pagina = document.getElementById('pagina');
-    const voltar = document.getElementById('voltar');
+document.addEventListener('DOMContentLoaded', function() {
+    const carta = document.getElementById('carta')
+    const pagina = document.getElementById('pagina')
+    const voltarButton = document.getElementById('voltar')
 
+    pagina.style.opacity = 0;
+    pagina.style.transition = 'opacity 0.3s ease'
 
-    carta.addEventListener('click', () => {
-        carta.style.display = 'none'; // Esconde a carta
-        pagina.style.display = 'block'; // Mostra a nova página
+    carta.addEventListener('click', function() {
+        carta.style.display = 'none'
+        pagina.style.display = 'flex'
+        voltarButton.style.display = 'block'
+
+        setTimeout(() => {
+            pagina.style.opacity = 1
+        }, 10)
     });
 
-    voltar.addEventListener('click', () => {
-        pagina.style.display = 'none'; // Esconde a nova página
-        carta.style.display = 'flex'; // Mostra a carta novamente
+    voltarButton.addEventListener('click', function() {
+        pagina.style.opacity = 0;
+
+        setTimeout(() => {
+            pagina.style.display = 'none';
+            carta.style.display = 'flex'; 
+            voltarButton.style.display = 'none'; 
+        }, 300);
     });
 });
 
 window.onload = function () {
     const countdownElement = document.getElementById('countdown');
     const targetDate = new Date('2027-03-25T00:00:00');
-    const popup = document.getElementById('popup');
-    const btnAceito = document.getElementById('btnAceito');
-    const btnFechar = document.getElementById('btnFechar');
-    const btnClose = document.getElementById('btnClose');
 
     function updateCountdown() {
         const now = new Date();
@@ -50,36 +58,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const volumeButton = document.getElementById('volumeButton');
     const volumeBar = document.getElementById('volumeBar');
 
-    // Toggle play/pause
     playPauseButton.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            playPauseButton.innerHTML = "⏸️"; // Pausa
+            playPauseButton.innerHTML = "⏸️";
         } else {
             audio.pause();
-            playPauseButton.innerHTML = "▶️"; // Play
+            playPauseButton.innerHTML = "▶️";
         }
     });
 
-    // Update the seek bar as the audio plays
     audio.addEventListener('timeupdate', () => {
         const value = (audio.currentTime / audio.duration) * 100;
         seekBar.value = value;
     });
 
-    // Seek audio when the seek bar is changed
     seekBar.addEventListener('input', () => {
         const seekTime = (seekBar.value / 100) * audio.duration;
         audio.currentTime = seekTime;
     });
 
-    // Volume control
     volumeButton.addEventListener('click', () => {
-        audio.muted = !audio.muted; // Alterna mudo
-        volumeButton.innerHTML = audio.muted ? "🔇" : "🔊"; // Muda ícone
+        audio.muted = !audio.muted;
+        volumeButton.innerHTML = audio.muted ? "🔇" : "🔊";
     });
 
     volumeBar.addEventListener('input', () => {
-        audio.volume = volumeBar.value / 100; // Ajusta volume
+        audio.volume = volumeBar.value / 100;
     });
 });

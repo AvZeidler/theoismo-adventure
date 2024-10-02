@@ -11,22 +11,24 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    flex-wrap: wrap;
 }
 
 h1 {
     font-size: 24px;
     text-align: center;
-    color: #ffffff;
+    color: rgb(46, 44, 44);
+    padding: 10px 0;
     font-weight: bold;
 }
 
 p {
     font-size: 16px;
     line-height: 1.5;
-    color: #ffffff;
+    color: rgb(46, 44, 44);
     font-weight: bold;
     text-align: right;
-    margin-bottom: 2px;
+    padding: 10px 0; 
 }
 
 .countdown {
@@ -50,78 +52,108 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 103, 172, 0.6);
-    color: white;
+    background-color: rgba(204, 206, 207, 0.8);
+    color: rgb(46, 44, 44);
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     padding: 40px;
     width: 250px;
-    /* Largura da carta */
-    height: 300px;
-    /* Altura da carta */
+    height: 304px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.carta-content {
+    position: relative;
+    z-index: 1;
 }
 
 .carta::before {
     content: '';
     position: absolute;
-    top: 10px;
-    /* Ajuste conforme necessário */
-    left: 10px;
-    /* Ajuste conforme necessário */
-    width: 65px;
-    /* Largura do selo */
-    height: 50px;
-    /* Altura do selo */
-    background-image: url('../background/selo.png');
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: url('../background/borda.png');
     background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    z-index: 0;
 }
 
 .carta::after {
-    content: '✉️';
-    /* Emoji de envelope como exemplo */
+    content: '';
     position: absolute;
-    top: 80px;
-    /* Ajuste conforme necessário */
-    left: 50%;
+    top: 40px;
+    left: 75px;
     transform: translate(-50%, 0);
-    font-size: 36px;
-    /* Tamanho do emoji */
+    width: 65px;
+    height: 50px;
+    background-image: url('../background/selo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 
 .carta:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 .pagina {
     display: none;
     text-align: center;
-    background-color: rgba(0, 103, 172, 0.6);
-    color: white;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    transition: transform 0.3s;
+    background-color: rgba(204, 206, 207, 0.8);
+    color: rgb(46, 44, 44);
+    border-radius: 10px;
+    padding: 40px;
+    width: 550px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pagina h1 {
+    margin: 20px 0;
+}
+
+.pagina p {
+    margin: 10px 0;
 }
 
 .pagina:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 #voltar {
-    margin-top: 20px;
-    padding: 10px 20px;
+    display: none;
+    background: none;
     border: none;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #6200ea;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+#voltar::before {
+    content: '';
+    background-image: url('../background/voltar.svg'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 24px; 
+    height: 24px;
+    top: 60%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.voltar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 .audio-player {
@@ -130,8 +162,8 @@ p {
     background-color: rgba(0, 103, 172, 0.6);
     border-radius: 8px;
     padding: 10px;
-    width: 300px; /* Largura do player */
-    margin: 20px auto; /* Centraliza o player */
+    width: 300px;
+    margin: 20px auto;
     transition: transform 0.3s;
 }
 
@@ -155,24 +187,24 @@ button {
 }
 
 button:hover {
-    color: #ffeb3b; /* Cor ao passar o mouse */
+    color: #ffeb3b;
 }
 
 input[type="range"] {
-    -webkit-appearance: none; /* Remove estilo padrão do slider */
-    width: 85px; /* Largura do slider */
-    height: 5px; /* Altura do slider */
-    background: #ddd; /* Cor de fundo do slider */
+    -webkit-appearance: none;
+    width: 85px;
+    height: 5px;
+    background: #ddd;
     border-radius: 5px;
-    outline: none; /* Remove contorno */
+    outline: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove estilo padrão do thumb */
-    appearance: none; /* Para outros navegadores */
-    width: 15px; /* Largura do thumb */
-    height: 15px; /* Altura do thumb */
-    border-radius: 50%; /* Forma redonda */
-    background: rgba(152, 209, 247); /* Cor do thumb */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(152, 209, 247);
     cursor: pointer;
 }
